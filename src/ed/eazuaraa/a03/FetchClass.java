@@ -9,7 +9,7 @@ package ed.eazuaraa.a03;
  *
  * @author eazuara
  */
-public abstract class FetchClass {
+public abstract class FetchClass  {
     
    protected int[] vector;
    
@@ -47,8 +47,12 @@ public abstract class FetchClass {
     }
 
     public void showFetch(int n){
-        System.out.println("El numero es: " + n);
-                }
+        if(n==1){
+        System.out.println("El numero no esta en el arrego");
+                }else{
+            System.out.println("El numero esta en la posicion"+n);
+        }
           
+}
 }
 

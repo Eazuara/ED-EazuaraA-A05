@@ -18,15 +18,11 @@ public class EDEazuaraAA03 {
      */
     public static void main(String[] args) {
       
-        System.out.println("Introduzca el tamaño del vector:");
+       Binario teclado= new Binario();
+       teclado.setVector(teclado.RandomV(3));
+       teclado.MergeSort();
+        System.out.println(teclado.showVector());
         
-        Scanner tamaño = new Scanner(System.in);
-        int n=tamaño.nextInt();
-        
-        Secuencial main = new Secuencial();
-        main.setVector(main.RandomV(n));
-        
-        System.out.println(main.showVector());
-    }
+   }
     
 }

@@ -33,7 +33,7 @@ public class Binario extends FetchClass implements Ordenamientos {
      
      
      else {
-       start =center+1; //Si el valor del numero es mayor al del centro se recorre el pivote inicial a centro+1
+       start =center+1; 
      }
      
    }
@@ -57,12 +57,90 @@ public class Binario extends FetchClass implements Ordenamientos {
             vector[m]=temp;
         }
     }
+        
+    }
+
+    @Override
+    public void Inserccion() {
+      int temp, j;
+    
+    for (int i = 1; i < vector.length; i++){ 
+        temp = vector[i]; 
+    j = i - 1; 
+      while ((j >= 0) && (temp < vector[j])){ 
+        vector[j + 1] = vector[j];       
+      j--;                   
+    }
+        vector[j + 1] = temp;
     }
 }
-
-
-
     
-    
+    @Override
+    public void burbuja(){
+            
+        for (int i=1; i< vector.length; i++){
+	for(int j=0; j<vector.length-1; j++){
+        if(vector[j]> vector[j+1]){
+            intercambio(j,j+1);     
+        }
+            }
+    }
+ }
+
+    @Override
+    public void MergeSort() {
+   if (vector.length > 1) {
+            int q = vector.length/2;
+         
+        }
+    }
+
+    static int[] merge(int[] l, int[] r) {
+        int totElem = l.length + r.length;
+        int[] a = new int[totElem];
+        int i,li,ri;
+        i = li = ri = 0;
+        while ( i < totElem) {
+            if ((li < l.length) && (ri<r.length)) {
+                if (l[li] < r[ri]) {
+                    a[i] = l[li];
+                    i++;
+                    li++;
+                }
+                else {
+                    a[i] = r[ri];
+                    i++;
+                    ri++;
+                }
+            }
+            else {
+                if (li >= l.length) {
+                    while (ri < r.length) {
+                        a[i] = r[ri];
+                        i++;
+                        ri++;
+                    }
+                }
+                if (ri >= r.length) {
+                    while (li < l.length) {
+                        a[i] = l[li];
+                        li++;
+                        i++;
+                    }
+                }
+            }
+        }
+        return a;
+
+    }
+
+    private void intercambio(int j, int i) {
+       
+    int temp = vector[j];
+    vector[j] = vector[i];
+    vector[i] = temp;
+    }
+}
     
 
+ 

@@ -12,6 +12,9 @@ package ed.eazuaraa.a03;
 public interface Ordenamientos {
     
     void ordenar();
+    void Inserccion();
+    void burbuja();
+    void MergeSort();
         
     
     }
